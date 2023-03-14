@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo El sistema tiene $(getent passwd | wc -l) usuarios

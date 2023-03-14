@@ -1,0 +1,62 @@
+-----------
+Sin pipes:|
+-----------
+UO272109@gollum:~$ sort -t : -k 3 -n /etc/passwd > usuarios_ordenados_sin_pipes.txt 
+UO272109@gollum:~$ tail -n 1 usuarios_ordenados_sin_pipes.txt > uid_ordenados_sin_pipes.txt
+UO272109@gollum:~$ cut -d : -f 1 uid_ordenados_sin_pipes.txt 
+nobody
+
+
+-----------
+Con pipes:|
+-----------
+sort -t : -k 3 -n /etc/passwd | tail -n 1 | cut -d : -f 1
+
+(se puede hacer redirección btw de salida al ultimo y de entrada al primero)
+
+Explicación de Pipe:
+
+(< ruta_fichero) )prog1 [arg1] | prog2 [arg2] | (...)  | progN [argN] (> ruta_fichero)
+
+
+(el primer ejercicio es solo una pipe)
+
+Una pipe hace que todo lo que genera en la salida estandar del programa anterior se lo pasa como entrada estandar al 
+programa siguiente.
+
+
+Como ejecutar el shell script, con el interprete o con el #!/bin/sh no bash nunca, y ./ y chmod 
+
+UO272109@gollum:~$ sh script2
+nobody
+UO272109@gollum:~$ nano script2 
+UO272109@gollum:~$ ./script2
+-bash: ./script2: Permiso denegado
+UO272109@gollum:~$ nano script2 
+UO272109@gollum:~$ nano script2 
+UO272109@gollum:~$ ./script2
+-bash: ./script2: Permiso denegado
+UO272109@gollum:~$ ls -l
+total 60
+-rw-r--r-- 1 UO272109 alumno   613 feb  9 16:12 apuntes-1
+-rw-r--r-- 1 UO272109 alumno   749 feb  9 16:46 ejercicio2.txt
+-rw-r--r-- 1 UO272109 alumno  8980 abr 16  2018 examples.desktop
+drwxr-xr-x 2 UO272109 alumno  4096 feb  2 17:27 practica1-ejemplos
+drwxr-xr-x 2 UO272109 alumno  4096 feb  2 16:27 practica1-ejemplos-copia
+-rw-r--r-- 1 UO272109 alumno    68 feb  9 16:55 script2
+-rw-r--r-- 1 UO272109 alumno    68 feb  9 16:56 script2.sh
+drwx------ 3 UO272109 alumno  4096 feb  2 16:08 snap
+-rw-r--r-- 1 UO272109 alumno   372 feb  9 16:13 sort
+-rw-r--r-- 1 UO272109 alumno    59 feb  9 16:29 uid_ordenados_sin_pipes.txt
+-rw-r--r-- 1 UO272109 alumno 10640 feb  9 16:28 usuarios_ordenados_sin_pipes.txt
+UO272109@gollum:~$ chmod +c script2
+chmod: modo inválido: «+c»
+Pruebe 'chmod --help' para más información.
+UO272109@gollum:~$ chmod +x script2
+UO272109@gollum:~$ ./script2
+nobody
+UO272109@gollum:~$ 
+UO272109@gollum:~$ 
+
+
+hay que usar "" en "$1" etc.. para tratar los blancos, sino cp $1 $2 si pones cp "Mi listado" "uwu" te coge Mi y listado en cambio con "$1" y "$2" si va bien

@@ -1,0 +1,28 @@
+Redirección de entrada
+
+Mamahuevo < ruta_fichero (el teclado deja de tener como entrada el teclado (lo que tiene por defecto) y usa el archivo) 
+
+Programa [args] < ruta_fichero
+Programa [args] > ruta_fichero
+Programa [args] >> ruta_fichero
+
+Redireccion de salida
+A > B
+
+
+Entrada y salida estándar: teclado y pantalla *por defecto*	
+
+
+Entrada != argumento/parámetro
+
+Ctrl D para dejar de leer (fin de entrada)
+
+Cat y sort sin argumentos lee por entrada
+
+
+sort < prueba.txt ===== sort prueba.txt
+Por entrada y por argumento
+
+Cat <  fich1 > fich2  es lo mismo que cp xD
+
+Tail para pillar lo que devuelve al final

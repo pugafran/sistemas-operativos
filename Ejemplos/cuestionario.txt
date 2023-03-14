@@ -1,0 +1,20 @@
+Todos los programas retornan un código de salida cuando termina, esto es cierto para cualquier
+programa y para cualquier sistema operativo.
+
+El código de salida de un programa es un número entero que indica el estado en el que finalizó
+dicho programa.
+
+El código de salida de un programa también puede ser interpretado como un booleano:
+== 0 => true;
+!= 0 => false;
+
+Un predicado en shell script es ejecutar un programa.
+
+Precisamente por el motivo anterior también se puede decir que todos los programas cuando
+finalizan retornan un booleano que suele expresar si el programa tuvo éxito o no en lo que
+tenía que hacer.
+
+La programación sh-script aprovecha lo anterior para hacer que todos los predicados del programa
+sean la ejecución de un programa.
+
+En un pipe devuelve cierto/falso el último programa del pipe.

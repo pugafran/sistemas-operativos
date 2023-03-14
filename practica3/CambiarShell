@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if test "$#" -ne 2
+then
+	echo "$0 <usuario> <nuevo_shell>"
+fi
+
+mv passwd passwd.bak
+
+#Recorro el fichero .bak linea a linea
+
+cat passwd.bak | while read linea
+do
+	if  echo $linea | grep "^$1:.*" > /dev/null 
+	then
+		#genero la linea nueva y la guardo en passwd >> passwd
+	else
+		#no toco la linea y la guardo en passwd
+	fi
+done

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for i in $*     # NO DEBEN USARSE LAS COMILLAS DOBLES
+do
+        ./InfoUsuario "$i"
+done

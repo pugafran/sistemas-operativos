@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if test $# -ne 5
+then
+	echo "Numero de argumentos incorrecto"
+	echo "USO: $0 <usuario> <UID> <GID> <Comentario> <Shell>"
+	exit
+fi
+
+if grep "^$1:.*" passwd_de_aliexpress > /dev/null
+then
+	echo "El usuario ya existe"
+	exit 1
+fi
+
+if grep "^.*:.*:$2:.*" passwd_de_aliexpress > /dev/null
+then
+	echo "El UID $2 ya existe"
+	exit 1
+fi
+
+if ! getent group | grep "^.*:.*:$3:.*" > /dev/null
+then
+	echo "El grupo $3 no existe"
+	exit 1
+fi
+
+echo "$1:x:$2:$3:$4:/home/alumno/$1:/bin/$5" >> passwd_de_aliexpress

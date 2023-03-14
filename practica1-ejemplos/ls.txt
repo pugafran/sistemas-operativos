@@ -1,0 +1,6 @@
+desorden
+desorden.txt
+ls.txt
+numeritos
+prueba.py
+prueba.txt

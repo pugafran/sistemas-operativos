@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo La lista de usuarios con el shell $1 es:
+getent passwd | sort -k 3 -t : -n | grep "/$1$"
+

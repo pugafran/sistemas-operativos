@@ -1,0 +1,5 @@
+#!/bin/sh
+getent passwd | while read mamahuevo
+do
+	echo $mamahuevo | cut -d : -f 1
+done

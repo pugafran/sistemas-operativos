@@ -1,0 +1,2 @@
+#!/bin/sh
+$PATH = "$PATH:/home/alumno/UO272109/scripts_path"

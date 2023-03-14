@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if ! test -d "$1"
+then
+	echo "$1 no es un directorio"
+	exit 1
+fi
+
+echo "Los ficheros de texto que tienen más de $2 lineas son:"
+for var in "$1"/*
+do
+	if test -f $var 
+	then	
+		n_lineas=$(cat $var | tr -d '\n' | wc -m)
+		if test $n_lineas -gt $2
+		then
+			echo "$var"
+		fi
+	else
+		"$0" "$var" $2
+		
+	fi
+done

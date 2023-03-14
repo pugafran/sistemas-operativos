@@ -1,0 +1,7 @@
+#!/bin/sh  
+info=$(getent passwd | grep $1)
+echo Informacion del usuario "$1"
+echo UID $(echo $info | cut -f 3 -d :) 
+echo GID $(echo $info | cut -f 4 -d :) 
+echo Directorio personal $(echo $info | cut -f 6 -d :) 
+echo Interprete de comandos $(echo $info | cut -f 7 -d :)
